@@ -1,0 +1,9 @@
+.blue_section {
+  background: rgb(14, 0, 255);
+  background: linear-gradient(
+    360deg,
+    rgb(21, 10, 240) 0%,
+    rgb(2, 42, 175) 0%,
+    rgb(0, 127, 245) 100%
+  );
+}
