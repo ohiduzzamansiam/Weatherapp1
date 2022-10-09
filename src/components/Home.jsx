@@ -14,29 +14,49 @@ const Home = () => {
   const [isLoading, setIsloading] = useState(true);
   const [country, setCountry] = useState([]);
   const [input, setInput] = useState("");
+  // useEffect(() => {
+  //   const getCountry = async () => {
+  //     let res = await axios.get("https://ipinfo.io/json?token=4f66e17bb00ee4");
+  //     let data = await res.data;
+  //     setCountry(data.city);
+  //   };
+  //   getCountry();
+  // }, []);
+  // useEffect(() => {
+  //   if (country.length) {
+  //     const getTemp = async () => {
+  //       let res = await axios.get(
+  //         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${
+  //           input === "" ? country : input
+  //         }?key=GK5PKAP745HMQ8YVZXWDWB62L`
+  //       );
+  //       let data = await res.data;
+  //       setData(data);
+  //       setIsloading(false);
+  //     };
+  //     getTemp();
+  //   }
+  // }, [country, input]);
+
   useEffect(() => {
-    const getCountry = async () => {
-      let res = await axios.get("https://ipinfo.io/json?token=4f66e17bb00ee4");
-      let data = await res.data;
-      setCountry(data.city);
-    };
-    getCountry();
-  }, []);
-  useEffect(() => {
-    if (country.length) {
-      const getTemp = async () => {
-        let res = await axios.get(
+    fetch("https://ipinfo.io/json?token=4f66e17bb00ee4")
+      .then((res) => res.json())
+      .then((data) => {
+        return data.city;
+      })
+      .then((city) => {
+        fetch(
           `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${
-            input === "" ? country : input
+            input === "" ? city : input
           }?key=GK5PKAP745HMQ8YVZXWDWB62L`
-        );
-        let data = await res.data;
-        setData(data);
-        setIsloading(false);
-      };
-      getTemp();
-    }
-  }, [country, input]);
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            setData(data);
+            setIsloading(false);
+          });
+      });
+  }, [input]);
 
   if (isLoading === false) {
     return (
