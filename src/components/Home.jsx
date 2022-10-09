@@ -46,7 +46,7 @@ const Home = () => {
             <div className="search_bar">
               <form className="flex items-center mx-10">
                 <label htmlFor="simple-search" className="sr-only">
-                  Search Country
+                  Search any area or country
                 </label>
                 <div className="relative w-full">
                   <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
