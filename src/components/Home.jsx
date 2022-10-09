@@ -41,8 +41,8 @@ const Home = () => {
   if (isLoading === false) {
     return (
       <>
-        <div className="main_container lg:max-w-[50%] lg:mx-auto pb-2">
-          <div className="blue_section min-h-[70vh] bg-blue-600 shadow-lg shadow-gray-400 flex flex-col justify-center space-y-10 text-center py-5 rounded-b-[50px]">
+        <div className="main_container lg:max-w-[50%] pb-7 lg:mx-auto min-h-screen max-h-screen flex flex-col justify-between">
+          <div className="blue_section min-h-[73vh] bg-blue-600 shadow-lg shadow-gray-400 flex flex-col justify-center space-y-10 text-center py-5 rounded-b-[50px]">
             <div className="search_bar">
               <form className="flex items-center mx-10">
                 <label htmlFor="simple-search" className="sr-only">
@@ -100,7 +100,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="yellow_section shadow-lg shadow-gray-400 bg-amber-400 mx-3 mt-10 rounded-2xl">
+          <div className="yellow_section shadow-lg shadow-gray-400 bg-amber-400 mx-3 rounded-2xl">
             <div className="temps flex justify-evenly text-center pt-7">
               <div className="min_temps flex flex-col">
                 <span className="text-xl font-extrabold text-white">
@@ -128,8 +128,8 @@ const Home = () => {
               </div>
             </div>
             <hr className="border border-spacing-3 my-1" />
-            <div className="credit text-center pb-1">
-              <span className="text-sm text-white font-extrabold">
+            <div className="credit text-end pb-1 pr-7">
+              <span className="text-[10px] text-white font-extrabold">
                 MADE WITH ❤️ BY SIAM
               </span>
             </div>
