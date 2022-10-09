@@ -41,8 +41,8 @@ const Home = () => {
   if (isLoading === false) {
     return (
       <>
-        <div className="main_container lg:max-w-[50%] pb-7 lg:mx-auto min-h-screen max-h-screen flex flex-col justify-between">
-          <div className="blue_section min-h-[73vh] bg-blue-600 shadow-lg shadow-gray-400 flex flex-col justify-center space-y-10 text-center py-5 rounded-b-[50px]">
+        <div className="main_container lg:max-w-[50%] pb-7 lg:mx-auto flex flex-col justify-between">
+          <div className="blue_section mb-7 min-h-[67vh] bg-blue-600 shadow-lg shadow-gray-400 flex flex-col justify-center space-y-10 text-center py-5 rounded-b-[50px]">
             <div className="search_bar">
               <form className="flex items-center mx-10">
                 <label htmlFor="simple-search" className="sr-only">
