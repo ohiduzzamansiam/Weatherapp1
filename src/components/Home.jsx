@@ -21,7 +21,7 @@ const Home = () => {
       setCountry(data.city);
     };
     getCountry();
-  }, [input]);
+  }, []);
   useEffect(() => {
     if (country.length) {
       const getTemp = async () => {
@@ -79,8 +79,8 @@ const Home = () => {
               </form>
             </div>
             <div className="country">
-              <h1 className="text-3xl font-bold text-white">
-                {flu(data.address)}
+              <h1 className="text-xl font-bold text-white">
+                {data.resolvedAddress}
               </h1>
             </div>
             <div className="temp">
